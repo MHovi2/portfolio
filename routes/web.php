@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','BackendController@index');
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Index Route ...........
+Route::get('/index', 'HomeController@index')->name('index');
+//Home Route ...........
+Route::get('/home', 'BackendController@home')->name('home');
+

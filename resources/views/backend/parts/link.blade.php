@@ -6,3 +6,22 @@
 <!-- Custom style CSS -->
 <link rel="stylesheet" href="assets/backend/css/custom.css">
 <link rel='shortcut icon' type='image/x-icon' href='assets/backend/img/favicon.ico' />
+
+
+
+@switch(Request::segment('1'))
+    @case('home')
+
+        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
+        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
+        @break
+    @case('dashboad')
+        
+        @break
+    @default
+
+    main page
+        
+@endswitch
