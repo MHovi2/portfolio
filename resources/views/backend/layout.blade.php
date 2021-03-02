@@ -193,7 +193,7 @@
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>About</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="email-inbox.html">Infos</a></li>
+              <li><a class="nav-link" href="{{route('info')}}">Infos</a></li>
               <li><a class="nav-link" href="email-compose.html">Skills</a></li>
               <li><a class="nav-link" href="email-read.html">Experiance & Education</a></li>
             </ul>
@@ -239,7 +239,7 @@
               <li><a class="nav-link" href="email-read.html">Experiance & Education</a></li>
             </ul>
           </li>
-    
+
         </ul>
       </aside>
     </div>
@@ -256,9 +256,9 @@
     </footer>
   </div>
 </div>
-    
+
 
     @include('backend.parts.scripts')
-    
+
 </body>
 </html>

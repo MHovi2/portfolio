@@ -18,10 +18,10 @@
         <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
         @break
     @case('dashboad')
-        
+
         @break
     @default
 
     main page
-        
+
 @endswitch

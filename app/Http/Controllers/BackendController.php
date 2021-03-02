@@ -17,6 +17,9 @@ class BackendController extends Controller
     public function home() {
         return view('backend.home');
     }
+    public function info() {
+        return view('backend.info');
+    }
 
-  
+
 }

@@ -22,4 +22,6 @@ Auth::routes(['register'=>false]);
 Route::get('/index', 'HomeController@index')->name('index');
 //Home Route ...........
 Route::get('/home', 'BackendController@home')->name('home');
+//About Info Route ...........
+Route::get('/info', 'BackendController@info')->name('info');
 
