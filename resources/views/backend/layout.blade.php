@@ -194,7 +194,7 @@
             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>About</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('info')}}">Infos</a></li>
-              <li><a class="nav-link" href="email-compose.html">Skills</a></li>
+              <li><a class="nav-link" href="{{route('skills')}}">Skills</a></li>
               <li><a class="nav-link" href="email-read.html">Experiance & Education</a></li>
             </ul>
           </li>

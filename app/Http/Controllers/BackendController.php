@@ -20,6 +20,13 @@ class BackendController extends Controller
     public function info() {
         return view('backend.info');
     }
+    public function skills() {
+        return view('backend.skills');
+    }
+
+    public function skills_add(Request $request) {
+        return $request->age;
+    }
 
 
 }
