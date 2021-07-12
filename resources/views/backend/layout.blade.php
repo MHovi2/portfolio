@@ -195,7 +195,7 @@
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('info')}}">Infos</a></li>
               <li><a class="nav-link" href="{{route('skills')}}">Skills</a></li>
-              <li><a class="nav-link" href="email-read.html">Experiance & Education</a></li>
+              <li><a class="nav-link" href="{{route('expedu')}}">Experiance & Education</a></li>
             </ul>
           </li>
           <li class="dropdown">

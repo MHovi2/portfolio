@@ -28,5 +28,10 @@ class BackendController extends Controller
         return $request->age;
     }
 
+    public function expedu() {
+        return view('backend.expedu');
+    }
+
+
 
 }

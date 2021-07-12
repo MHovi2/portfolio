@@ -27,4 +27,6 @@ Route::get('/info', 'BackendController@info')->name('info');
 //About Skill Route ...........
 Route::get('/skill', 'BackendController@skills')->name('skills');
 Route::post('/skill', 'BackendController@skills_add')->name('skills');
+//About Exp & Edu Route ...........
+Route::get('/expedu', 'BackendController@expedu')->name('expedu');
 
