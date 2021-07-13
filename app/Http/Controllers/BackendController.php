@@ -32,6 +32,17 @@ class BackendController extends Controller
         return view('backend.expedu');
     }
 
+    public function projects(){
+        return view('backend.projects');
+    }
 
+
+    public function contactDetails(){
+        return view('backend.contact-details');
+    }
+
+    public function socialLinks(){
+        return view('backend.social-media-links');
+    }
 
 }

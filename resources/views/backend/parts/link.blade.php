@@ -24,6 +24,21 @@
         <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
         <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
         @break
+
+    @case('projects')
+
+        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
+        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
+        @break
+    @case('contact-details')
+
+        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
+        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
+        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
+        @break
     @case('dashboad')
 
         @break
