@@ -10,7 +10,8 @@
 <script src="assets/backend/js/custom.js"></script>
 
 @switch(Request::segment('1'))
-    @case('home')
+
+    @case('home' || 'expedu' || 'projects' || 'contact-details' || 'blog')
         <!-- Page Specific JS File -->
         <!-- JS Libraies -->
         <script src="assets/backend/bundles/summernote/summernote-bs4.js"></script>
@@ -19,40 +20,7 @@
         <script src="assets/backend/bundles/jquery-selectric/jquery.selectric.min.js"></script>
         <script src="assets/backend/bundles/ckeditor/ckeditor.js"></script>
 
-        @break
-
-    @case('expedu')
-        <!-- Page Specific JS File -->
-        <!-- JS Libraies -->
-        <script src="assets/backend/bundles/summernote/summernote-bs4.js"></script>
-        <script src="assets/backend/bundles/codemirror/lib/codemirror.js"></script>
-        <script src="assets/backend/bundles/codemirror/mode/javascript/javascript.js"></script>
-        <script src="assets/backend/bundles/jquery-selectric/jquery.selectric.min.js"></script>
-        <script src="assets/backend/bundles/ckeditor/ckeditor.js"></script>
-
-        @break
-
-    @case('projects')
-        <!-- Page Specific JS File -->
-        <!-- JS Libraies -->
-        <script src="assets/backend/bundles/summernote/summernote-bs4.js"></script>
-        <script src="assets/backend/bundles/codemirror/lib/codemirror.js"></script>
-        <script src="assets/backend/bundles/codemirror/mode/javascript/javascript.js"></script>
-        <script src="assets/backend/bundles/jquery-selectric/jquery.selectric.min.js"></script>
-        <script src="assets/backend/bundles/ckeditor/ckeditor.js"></script>
-
-        @break
-
-    @case('contact-details')
-        <!-- Page Specific JS File -->
-        <!-- JS Libraies -->
-        <script src="assets/backend/bundles/summernote/summernote-bs4.js"></script>
-        <script src="assets/backend/bundles/codemirror/lib/codemirror.js"></script>
-        <script src="assets/backend/bundles/codemirror/mode/javascript/javascript.js"></script>
-        <script src="assets/backend/bundles/jquery-selectric/jquery.selectric.min.js"></script>
-        <script src="assets/backend/bundles/ckeditor/ckeditor.js"></script>
-
-        @break
+        @break;
 
     @default
 

@@ -45,4 +45,8 @@ class BackendController extends Controller
         return view('backend.social-media-links');
     }
 
+    public function blog(){
+        return view('backend.blog');
+    }
+
 }

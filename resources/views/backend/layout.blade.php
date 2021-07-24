@@ -214,9 +214,7 @@
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Blog</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="email-inbox.html">Infos</a></li>
-              <li><a class="nav-link" href="email-compose.html">Skills</a></li>
-              <li><a class="nav-link" href="email-read.html">Experiance & Education</a></li>
+              <li><a class="nav-link" href="{{route('blog')}}">Add & View</a></li>
             </ul>
           </li>
           <li class="menu-header">Others</li>

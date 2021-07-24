@@ -10,40 +10,21 @@
 
 
 @switch(Request::segment('1'))
-    @case('home')
+    @case('home' || 'expedu' || 'projects' || 'contact-details' || 'blog' )
 
         <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
         <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
         <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
         <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
-        @break
-    @case('expedu')
 
-        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
-        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
-        @break
+        @break;
 
-    @case('projects')
 
-        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
-        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
-        @break
-    @case('contact-details')
-
-        <link rel="stylesheet" href="assets/backend/bundles/summernote/summernote-bs4.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/lib/codemirror.css">
-        <link rel="stylesheet" href="assets/backend/bundles/codemirror/theme/duotone-dark.css">
-        <link rel="stylesheet" href="assets/backend/bundles/jquery-selectric/selectric.css">
-        @break
     @case('dashboad')
 
         @break
     @default
 
-    main page
+
 
 @endswitch
