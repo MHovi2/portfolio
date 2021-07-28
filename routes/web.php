@@ -38,11 +38,13 @@ Route::get('/expedu', 'BackendController@expedu')->name('expedu');
 Route::get('/projects', 'BackendController@projects')->name('projects');
 Route::post('/projects', [BackendController::class, 'addProject']);
 
-//Portfolio Projects ROute .........
+//Contact-details Projects ROute .........
 Route::get('/contact-details', 'BackendController@contactDetails')->name('cd');
+Route::post('/contact-details', [BackendController::class, 'updateDetails']);
 
 //Portfolio Projects ROute .........
 Route::get('/social-links', 'BackendController@socialLinks')->name('sl');
+Route::post('/social-links', [BackendController::class, 'updateLink']);
 
 //BLog  ROute .........
 Route::get('/blog', 'BackendController@blog')->name('blog');

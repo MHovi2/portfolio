@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\home;
 use App\project;
 use App\blog;
+use App\contact_detail;
+use App\social_link;
 
 class BackendController extends Controller
 {
@@ -43,18 +45,6 @@ class BackendController extends Controller
 
 
 
-    public function contactDetails()
-    {
-        return view('backend.contact-details');
-    }
-
-    public function socialLinks()
-    {
-        return view('backend.social-media-links');
-    }
-
-
-
     //Home Page Controllers..
 
     //Get Method
@@ -72,6 +62,7 @@ class BackendController extends Controller
         $home->name = $req->name;
         $home->description = $req->description;
         $home->image = $req->image;
+
         $home->save();
 
         return redirect('/home');
@@ -96,6 +87,7 @@ class BackendController extends Controller
         $project->languages = $req->languages;
         $project->preview_link = $req->previewLink;
         $project->image = $req->image;
+
         $project->save();
 
         return redirect('projects');
@@ -119,10 +111,61 @@ class BackendController extends Controller
         $blog->description = $req->description;
         $blog->post_date = $req->postDate;
         $blog->image = $req->image;
+
         $blog->save();
 
         return redirect('blog');
     }
+
+    //Contact page controller...
+
+    //Get Method
+    public function contactDetails()
+    {
+        $data = contact_detail::all();
+        return view('backend.contact-details', ['info' => $data]);
+    }
+
+    //POST Method
+    public function updateDetails(Request $req)
+    {
+        $contact = contact_detail::find($req->id);
+
+        $contact->title = $req->title;
+        $contact->description = $req->description;
+        $contact->email = $req->email;
+        $contact->phone = $req->phone;
+
+        $contact->save();
+
+        return redirect('contact-details');
+    }
+
+    //Social link page
+
+    //Get Method
+    public function socialLinks()
+    {
+        $data = social_link::all();
+        return view('backend.social-media-links', ['info' => $data]);
+    }
+
+    //POST Method
+    public function updateLink(Request $req)
+    {
+        $social = social_link::find($req->id);
+
+        $social->link1 = $req->link1;
+        $social->link2 = $req->link2;
+        $social->link3 = $req->link3;
+        $social->link4 = $req->link4;
+        $social->save();
+
+        return redirect('social-links');
+    }
+
+
+
 
 
     //End...
