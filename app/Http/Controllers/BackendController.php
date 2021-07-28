@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\about_info;
 use Illuminate\Http\Request;
 //Import all models...
 use App\home;
@@ -23,10 +23,7 @@ class BackendController extends Controller
         return view('backend.index');
     }
 
-    public function info()
-    {
-        return view('backend.info');
-    }
+
     public function skills()
     {
         return view('backend.skills');
@@ -141,7 +138,7 @@ class BackendController extends Controller
         return redirect('contact-details');
     }
 
-    //Social link page
+    //Social link page Controller
 
     //Get Method
     public function socialLinks()
@@ -164,7 +161,34 @@ class BackendController extends Controller
         return redirect('social-links');
     }
 
+    //About info page Controller ..
 
+    //Get Method
+    public function info()
+    {
+        $data = about_info::all();
+        return view('backend.info', ['info' => $data]);
+    }
+
+    //POST Method...
+    public function updateAboutInfo(Request $req)
+    {
+        $info = about_info::find($req->id);
+
+        $info->first_name = $req->firstName;
+        $info->last_name = $req->lastName;
+        $info->age = $req->age;
+        $info->address = $req->address;
+        $info->phone = $req->phone;
+        $info->email = $req->email;
+        $info->nationality = $req->nationality;
+        $info->skype = $req->skype;
+        $info->language = $req->language;
+        $info->freelance = $req->freelance;
+        $info->save();
+
+        return redirect('info');
+    }
 
 
 
