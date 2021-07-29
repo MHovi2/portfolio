@@ -9,6 +9,7 @@ use App\home;
 use App\project;
 use App\blog;
 use App\contact_detail;
+use App\skill;
 use App\social_link;
 
 class BackendController extends Controller
@@ -24,15 +25,7 @@ class BackendController extends Controller
     }
 
 
-    public function skills()
-    {
-        return view('backend.skills');
-    }
 
-    public function skills_add(Request $request)
-    {
-        return $request->age;
-    }
 
     public function expedu()
     {
@@ -188,6 +181,41 @@ class BackendController extends Controller
         $info->save();
 
         return redirect('info');
+    }
+    //Skill page Controller
+
+    //Get Method
+    public function skills()
+    {
+        $data = skill::all();
+        return view('backend.skills', ['info' => $data]);
+    }
+
+    //POST Method 1
+    public function skills_add(Request $request)
+    {
+        return $request->age;
+    }
+
+    //POST Method 2
+    public function updateSKill(Request $req)
+    {
+        $skill = skill::find($req->id);
+
+
+
+        $skill->html = $req->html;
+        $skill->css = $req->css;
+        $skill->js = $req->js;
+        $skill->php = $req->php;
+        $skill->laravel = $req->laravel;
+        $skill->jquery1 = $req->jquery1;
+        $skill->wp = $req->wp;
+        $skill->bstrap = $req->bstrap;
+
+        $skill->save();
+
+        return redirect('skill');
     }
 
 

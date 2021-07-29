@@ -32,6 +32,9 @@ Route::post('/info', [BackendController::class, 'updateAboutInfo']);
 Route::get('/skill', 'BackendController@skills')->name('skills');
 Route::post('/skill', 'BackendController@skills_add')->name('skills');
 
+Route::post('/skill', [BackendController::class, 'updateSkill']);
+
+
 //About Exp & Edu Route ...........
 Route::get('/expedu', 'BackendController@expedu')->name('expedu');
 
