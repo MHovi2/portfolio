@@ -9,6 +9,7 @@ use App\home;
 use App\project;
 use App\blog;
 use App\contact_detail;
+use App\expedu;
 use App\skill;
 use App\social_link;
 
@@ -27,10 +28,7 @@ class BackendController extends Controller
 
 
 
-    public function expedu()
-    {
-        return view('backend.expedu');
-    }
+
 
 
 
@@ -202,8 +200,6 @@ class BackendController extends Controller
     {
         $skill = skill::find($req->id);
 
-
-
         $skill->html = $req->html;
         $skill->css = $req->css;
         $skill->js = $req->js;
@@ -216,6 +212,30 @@ class BackendController extends Controller
         $skill->save();
 
         return redirect('skill');
+    }
+
+    //Exp and Edu Page Controller
+
+    //Get Method
+    public function expedu()
+    {
+        $data = expedu::all();
+        return view('backend.expedu', ['info' => $data]);
+    }
+
+    //Post Method
+    public function addexpedu(Request $req)
+    {
+        $expecu = new expedu();
+
+        $expecu->date = $req->date;
+        $expecu->expedu = $req->expedu;
+        $expecu->description = $req->description;
+        // $expecu->exp = $req->exp;
+        // $expecu->edu = $req->edu;
+        $expecu->save();
+
+        return redirect('expedu');
     }
 
 

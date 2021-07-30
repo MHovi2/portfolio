@@ -37,6 +37,7 @@ Route::post('/skill', [BackendController::class, 'updateSkill']);
 
 //About Exp & Edu Route ...........
 Route::get('/expedu', 'BackendController@expedu')->name('expedu');
+Route::post('/expedu', [BackendController::class, 'addexpedu']);
 
 //Portfolio Projects ROute .........
 Route::get('/projects', 'BackendController@projects')->name('projects');
