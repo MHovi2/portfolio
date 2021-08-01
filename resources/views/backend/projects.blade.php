@@ -108,7 +108,8 @@
                                                 <td>
                                                     <div class="badge badge-success">{{ $info['image'] }}</div>
                                                 </td>
-                                                <td><a href="#" class="btn btn-primary">Edit</a>
+                                                <td><a href="{{ 'showProject/' . $info['id'] }}"
+                                                        class="btn btn-primary">Edit</a>
                                                     <a href="#" class="btn btn-danger pl-2">Delete</a>
                                                 </td>
                                             </tr>

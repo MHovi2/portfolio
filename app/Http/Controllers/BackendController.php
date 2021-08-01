@@ -78,8 +78,32 @@ class BackendController extends Controller
 
         $project->save();
 
-        return redirect('projects');
+        return redirect('admin/projects');
     }
+
+    //show project
+    public function showProject($id)
+    {
+        $data = project::find($id);
+        return view('backend.editProject', ['info' => $data]);
+    }
+    //Update project
+    public function updateProject(Request $req)
+    {
+        $project =  project::find($req->id);
+
+        $project->project_name = $req->projectName;
+        $project->clint_name = $req->clintName;
+        $project->languages = $req->languages;
+        $project->preview_link = $req->previewLink;
+        $project->image = $req->image;
+
+        $project->save();
+
+        return redirect('admin/projects');
+    }
+
+
 
     //Blog Page Controller..
 
@@ -103,7 +127,7 @@ class BackendController extends Controller
 
         $blog->save();
 
-        return redirect('blog');
+        return redirect('admin/blog');
     }
     //Show Method...
     public function showData($id)
@@ -124,7 +148,7 @@ class BackendController extends Controller
 
         $blog->save();
 
-        return redirect('blog');
+        return redirect('admin/blog');
     }
 
     //Contact page controller...
@@ -148,7 +172,7 @@ class BackendController extends Controller
 
         $contact->save();
 
-        return redirect('contact-details');
+        return redirect('admin/contact-details');
     }
 
     //Social link page Controller
@@ -171,7 +195,7 @@ class BackendController extends Controller
         $social->link4 = $req->link4;
         $social->save();
 
-        return redirect('social-links');
+        return redirect('admin/social-links');
     }
 
     //About info page Controller ..
@@ -200,7 +224,7 @@ class BackendController extends Controller
         $info->freelance = $req->freelance;
         $info->save();
 
-        return redirect('info');
+        return redirect('admin/info');
     }
     //Skill page Controller
 
@@ -233,7 +257,7 @@ class BackendController extends Controller
 
         $skill->save();
 
-        return redirect('skill');
+        return redirect('admin/skill');
     }
 
     //Exp and Edu Page Controller
@@ -257,7 +281,7 @@ class BackendController extends Controller
         // $expecu->edu = $req->edu;
         $expecu->save();
 
-        return redirect('expedu');
+        return redirect('admin/expedu');
     }
 
 
