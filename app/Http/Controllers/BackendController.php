@@ -103,6 +103,14 @@ class BackendController extends Controller
         return redirect('admin/projects');
     }
 
+    //Delete Project
+    public function deleteProject($id)
+    {
+        $project = project::find($id);
+        $project->delete();
+
+        return redirect('admin/projects');
+    }
 
 
     //Blog Page Controller..
@@ -147,6 +155,15 @@ class BackendController extends Controller
         $blog->image = $req->image;
 
         $blog->save();
+
+        return redirect('admin/blog');
+    }
+
+    //Delete Blog
+    public function deleteBlog($id)
+    {
+        $blog = blog::find($id);
+        $blog->delete();
 
         return redirect('admin/blog');
     }

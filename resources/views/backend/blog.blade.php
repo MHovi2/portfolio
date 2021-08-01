@@ -108,7 +108,8 @@
                                                 </td>
                                                 <td><a href="{{ 'update-blog/' . $info['id'] }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-danger pl-2">Delete</a>
+                                                    <a href="{{ 'deleteBlog/' . $info['id'] }}"
+                                                        class="btn btn-danger pl-2">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

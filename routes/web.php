@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
     Route::post('projects', [BackendController::class, 'addProject']);
     Route::get('showProject/{id}', [BackendController::class, 'showProject']);
     Route::post('update-project', [BackendController::class, 'updateProject'])->name('update.project');
+    Route::get('deleteProject/{id}', [BackendController::class, 'deleteProject']);
 
 
     //Contact-details Projects ROute .........
@@ -64,6 +65,7 @@ Route::prefix('admin')->group(function () {
     Route::post('blog', [BackendController::class, 'addBlog']);
     Route::get('update-blog/{id}', [BackendController::class, 'showData']);
     Route::post('update-blog', [BackendController::class, 'updateBlog'])->name('update.blog');
+    Route::get('deleteBlog/{id}', [BackendController::class, 'deleteBlog']);
 });
 
 

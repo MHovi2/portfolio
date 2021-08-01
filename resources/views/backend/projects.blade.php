@@ -101,16 +101,18 @@
                                                         <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
                                                     </div>
                                                 </td>
+                                                <td hidden>{{ $info['id'] }}</td>
                                                 <td>{{ $info['project_name'] }}</td>
                                                 <td>{{ $info['clint_name'] }}</td>
-                                                <td>{{ $info['language'] }}</td>
+                                                <td>{{ $info['languages'] }}</td>
                                                 <td>{{ $info['preview_link'] }}</td>
                                                 <td>
                                                     <div class="badge badge-success">{{ $info['image'] }}</div>
                                                 </td>
                                                 <td><a href="{{ 'showProject/' . $info['id'] }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-danger pl-2">Delete</a>
+                                                    <a href="{{ 'deleteProject/' . $info['id'] }}"
+                                                        class="btn btn-danger pl-2">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
