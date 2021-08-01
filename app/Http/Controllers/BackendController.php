@@ -86,13 +86,35 @@ class BackendController extends Controller
     //Get Method..
     public function blog()
     {
-        return view('backend.blog');
+        $data = blog::all();
+        return view('backend.blog', ['info' => $data]);
     }
 
     //POST Method..
     public function addBlog(Request $req)
     {
         $blog = new blog();
+
+        $blog->title = $req->title;
+        $blog->post_by = $req->postBy;
+        $blog->description = $req->description;
+        $blog->post_date = $req->postDate;
+        $blog->image = $req->image;
+
+        $blog->save();
+
+        return redirect('blog');
+    }
+    //Show Method...
+    public function showData($id)
+    {
+        $data = blog::find($id);
+        return view('backend.editBlog', ['info' => $data]);
+    }
+    //Update Method..
+    public function updateBlog(Request $req)
+    {
+        $blog = blog::find($req->id);
 
         $blog->title = $req->title;
         $blog->post_by = $req->postBy;

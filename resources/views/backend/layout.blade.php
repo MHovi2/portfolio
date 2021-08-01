@@ -49,7 +49,8 @@
                             </div>
                             <div class="dropdown-list-content dropdown-list-message">
                                 <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-                    text-white"> <img alt="image" src="assets/backend/img/users/user-1.png" class="rounded-circle">
+                    text-white"> <img alt="image" src="{{ url('/') }}/assets/backend/img/users/user-1.png"
+                                            class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">John
                                             Deo</span>
                                         <span class="time messege-text">Please check your mail !!</span>
@@ -188,7 +189,8 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"> <img alt="image" src="assets/backend/img/logo.png" class="header-logo" />
+                        <a href="index.html"> <img alt="image" src="{{ url('/') }}/assets/backend/img/logo.png"
+                                class="header-logo" />
                             <span class="logo-name">MyFolio</span>
                         </a>
                     </div>
@@ -205,7 +207,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="mail"></i><span>About</span></a>
+                                    data-feather="airplay"></i><span>About</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="{{ route('info') }}">Infos</a></li>
                                 <li><a class="nav-link" href="{{ route('skills') }}">Skills</a></li>
