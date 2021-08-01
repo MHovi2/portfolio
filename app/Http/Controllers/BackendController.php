@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\about_info;
 use Illuminate\Http\Request;
 //Import all models...
 use App\home;
+use App\about_info;
 use App\project;
 use App\blog;
 use App\contact_detail;
@@ -24,13 +24,6 @@ class BackendController extends Controller
     {
         return view('backend.index');
     }
-
-
-
-
-
-
-
 
 
     //Home Page Controllers..

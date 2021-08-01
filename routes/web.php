@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\FrontendController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +16,10 @@ use App\Http\Controllers\BackendController;
 |
 */
 
-Route::get('/', [BackendController::class, '']);
+Route::get('/', [FrontendController::class, 'index']);
 
+
+//Backend Routes ....................................
 Route::prefix('admin')->group(function () {
     Route::get('/', 'BackendController@index');
 
