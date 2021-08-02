@@ -40,4 +40,4 @@
 <link rel="stylesheet" type="text/css" href="{{ url('/') }}/assets/frontend/css/styleswitcher.css" />
 
 <!-- Modernizr JS File -->
-<script src="js/modernizr.custom.js"></script>
+<script src="{{ url('/') }}/assets/frontend/js/modernizr.custom.js"></script>

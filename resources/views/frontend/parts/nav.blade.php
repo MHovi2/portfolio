@@ -3,31 +3,31 @@
     <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
         <li class="icon-box active">
             <i class="fa fa-home"></i>
-            <a href="index.html">
+            <a href="{{ route('index.port') }}">
                 <h2>Home</h2>
             </a>
         </li>
         <li class="icon-box">
             <i class="fa fa-user"></i>
-            <a href="about.html">
+            <a href="{{ route('about') }}">
                 <h2>About</h2>
             </a>
         </li>
         <li class="icon-box">
             <i class="fa fa-briefcase"></i>
-            <a href="portfolio.html">
+            <a href="{{ route('projects.port') }}">
                 <h2>Portfolio</h2>
             </a>
         </li>
         <li class="icon-box">
             <i class="fa fa-envelope-open"></i>
-            <a href="contact.html">
+            <a href="{{ route('contact') }}">
                 <h2>Contact</h2>
             </a>
         </li>
         <li class="icon-box">
             <i class="fa fa-comments"></i>
-            <a href="blog.html">
+            <a href="{{ route('blog.port') }}">
                 <h2>Blog</h2>
             </a>
         </li>
@@ -41,11 +41,13 @@
             <span></span>
             <span></span>
             <ul class="list-unstyled" id="menu">
-                <li class="active"><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
-                <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
-                <li><a href="portfolio.html"><i class="fa fa-folder-open"></i><span>Portfolio</span></a></li>
-                <li><a href="contact.html"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
-                <li><a href="blog.html"><i class="fa fa-comments"></i><span>Blog</span></a></li>
+                <li class="active"><a href="{{ route('index.port') }}"><i class="fa fa-home"></i><span>Home</span></a>
+                </li>
+                <li><a href="{{ route('about') }}"><i class="fa fa-user"></i><span>About</span></a></li>
+                <li><a href="{{ route('projects.port') }}"><i class="fa fa-folder-open"></i><span>Portfolio</span></a>
+                </li>
+                <li><a href="{{ route('contact') }}"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
+                <li><a href="{{ route('blog.port') }}"><i class="fa fa-comments"></i><span>Blog</span></a></li>
             </ul>
         </div>
     </nav>

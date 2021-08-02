@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="home">
+<body>
     <!-- Live Style Switcher Starts - demo only -->
     @include('frontend.parts.setting')
     <!-- Live Style Switcher Ends - demo only -->

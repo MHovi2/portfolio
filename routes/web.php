@@ -16,7 +16,19 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
-Route::get('/', [FrontendController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index'])->name('index.port');
+
+//About Route
+Route::get('about', [FrontendController::class, 'about'])->name('about');
+
+//Portfolio Route
+Route::get('projects', [FrontendController::class, 'projects'])->name('projects.port');
+
+//Contact Route
+Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
+
+//Contact Route
+Route::get('blog', [FrontendController::class, 'blog'])->name('blog.port');
 
 
 //Backend Routes ....................................
