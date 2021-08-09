@@ -9,7 +9,7 @@
                             <h4>Add Blog</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('update.blog') }}" method="POST">
+                            <form action="{{ route('update.blog') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" class="form-control" name="id" value="{{ $info['id'] }}">
                                 <div class="form-group row mb-4">
@@ -35,7 +35,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="file" class="form-control p-2" name="image"
+                                        <input type="file" class="form-control p-2" name="imageName"
                                             value="{{ $info['image'] }}">
                                     </div>
                                 </div>

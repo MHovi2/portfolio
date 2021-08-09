@@ -18,7 +18,7 @@ class CreateHomesTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('name');
-            $table->string('description')->length(1000);
+            $table->text('description');
             $table->string('image');
         });
     }

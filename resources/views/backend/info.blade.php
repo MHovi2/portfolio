@@ -45,7 +45,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label>Email</label>
-                                            <input type="text" class="form-control" name="email" value="email">
+                                            <input type="text" class="form-control" name="email"
+                                                value="{{ $info['email'] }}">
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4 mx-4">

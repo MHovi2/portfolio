@@ -196,44 +196,53 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Main</li>
-                        <li class="dropdown active">
+                        <li class="dropdown {{ Request::is('admin/index') ? 'active' : '' }}">
                             <a href="{{ route('index') }}" class="nav-link"><i
                                     data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
                         <li class="menu-header">Pages</li>
-                        <li class="dropdown">
+                        <li class="dropdown {{ Request::is('admin/home') ? 'active' : '' }}">
                             <a href="{{ route('home') }}" class=" nav-link "><i
                                     data-feather="command"></i><span>Home</span></a>
                         </li>
-                        <li class="dropdown">
+                        <li
+                            class="dropdown {{ Request::is('admin/info') ? 'active' : '' }} {{ Request::is('admin/skill') ? 'active' : '' }}{{ Request::is('admin/expedu') ? 'active' : '' }}">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="airplay"></i><span>About</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('info') }}">Infos</a></li>
-                                <li><a class="nav-link" href="{{ route('skills') }}">Skills</a></li>
-                                <li><a class="nav-link" href="{{ route('expedu') }}">Experiance & Education</a></li>
+                                <li class="{{ Request::is('admin/info') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('info') }}">Infos</a></li>
+                                <li class="{{ Request::is('admin/skill') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('skills') }}">Skills</a></li>
+                                <li class="{{ Request::is('admin/expedu') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('expedu') }}">Experiance & Education</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown {{ Request::is('admin/projects') ? 'active' : '' }}">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="users"></i><span>Portfolio</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('projects') }}">Projects</a></li>
+                                <li class="{{ Request::is('admin/projects') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('projects') }}">Projects</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li
+                            class="dropdown {{ Request::is('admin/contact-details') ? 'active' : '' }}{{ Request::is('admin/social-links') ? 'active' : '' }}">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="mail"></i><span>Contact</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('cd') }}">Contact Details</a></li>
-                                <li><a class="nav-link" href="{{ route('sl') }}">Social Media Links</a></li>
+                                <li class="{{ Request::is('admin/contact-details') ? 'active' : '' }}"><a
+                                        class="nav-link" href="{{ route('cd') }}">Contact Details</a></li>
+                                <li class="{{ Request::is('admin/social-links') ? 'active' : '' }}"><a
+                                        class="nav-link" href="{{ route('sl') }}">Social Media Links</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="book"></i><span>Blog</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="{{ route('blog') }}">Add & View</a></li>
+                                <li class="{{ Request::is('admin/blog') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('blog') }}">Add & View</a></li>
                             </ul>
                         </li>
                         <li class="menu-header">Others</li>

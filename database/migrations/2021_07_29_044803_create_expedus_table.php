@@ -17,6 +17,7 @@ class CreateExpedusTable extends Migration
             $table->id();
             $table->timestamps();
             $table->date('date');
+            $table->string('title');
             $table->string('expedu');
             $table->text('description');
             $table->string('exp');

@@ -13,30 +13,35 @@
                 <div class="row">
                     <!-- Left Side Starts -->
                     <div class="col-12 col-lg-4">
-                        <h3 class="text-uppercase custom-title mb-0 ft-wt-600 pb-3">Don't be shy !</h3>
-                        <p class="open-sans-font mb-3">Feel free to get in touch with me. I am always open to discussing new
-                            projects, creative ideas or opportunities to be part of your visions.</p>
-                        <p class="open-sans-font custom-span-contact position-relative">
-                            <i class="fa fa-envelope-open position-absolute"></i>
-                            <span class="d-block">mail me</span>mehedi174629@gmial.com
-                        </p>
-                        <p class="open-sans-font custom-span-contact position-relative">
-                            <i class="fa fa-phone-square position-absolute"></i>
-                            <span class="d-block">call me</span>+880 17 58 27 86 04
-                        </p>
+                        @foreach ($cdinfo as $cdinfo)
+                            <h3 class="text-uppercase custom-title mb-0 ft-wt-600 pb-3">{{ $cdinfo['title'] }}</h3>
+                            <p class="open-sans-font mb-3">{{ $cdinfo['description'] }}</p>
+                            <p class="open-sans-font custom-span-contact position-relative">
+                                <i class="fa fa-envelope-open position-absolute"></i>
+                                <span class="d-block">mail me</span>{{ $cdinfo['email'] }}
+                            </p>
+                            <p class="open-sans-font custom-span-contact position-relative">
+                                <i class="fa fa-phone-square position-absolute"></i>
+                                <span class="d-block">call me</span>+880 {{ $cdinfo['phone'] }}
+                            </p>
+                        @endforeach
+
                         <ul class="social list-unstyled pt-1 mb-5">
-                            <li class="facebook"><a title="Facebook" href="https://www.facebook.com/ovi15128/"><i
-                                        class="fab fa-facebook"></i></a>
-                            </li>
-                            <li class="twitter"><a title="Twitter" href="https://twitter.com/MehediH92640417"><i
-                                        class="fab fa-twitter"></i></a>
-                            </li>
-                            <li class="youtube"><a title="Github" href="https://github.com/mhovishek"><i
-                                        class="fab fa-github-alt"></i></a>
-                            </li>
-                            <li class="dribbble"><a title="Dribbble" href="https://dribbble.com/MHovi"><i
-                                        class="fab fa-dribbble"></i></a>
-                            </li>
+                            @foreach ($slinfo as $slinfo)
+                                <li class="facebook"><a title="Facebook" href="{{ $slinfo['link1'] }}"><i
+                                            class="fab fa-facebook"></i></a>
+                                </li>
+                                <li class="twitter"><a title="Twitter" href="{{ $slinfo['link2'] }}"><i
+                                            class="fab fa-twitter"></i></a>
+                                </li>
+                                <li class="youtube"><a title="Github" href="{{ $slinfo['link3'] }}"><i
+                                            class="fab fa-github-alt"></i></a>
+                                </li>
+                                <li class="dribbble"><a title="Dribbble" href="{{ $slinfo['link4'] }}"><i
+                                            class="fab fa-dribbble"></i></a>
+                                </li>
+                            @endforeach
+
                         </ul>
                     </div>
                     <!-- Left Side Ends -->

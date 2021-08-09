@@ -18,45 +18,52 @@
                             <div class="col-12 d-block d-sm-none">
                                 <img src="img/img-mobile.jpg" class="img-fluid main-img-mobile" alt="my picture" />
                             </div>
-                            <div class="col-6">
-                                <ul class="about-list list-unstyled open-sans-font">
-                                    <li> <span class="title">first name :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Mehedi</span>
-                                    </li>
-                                    <li> <span class="title">last name :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Hasan</span>
-                                    </li>
-                                    <li> <span class="title">Age :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">19
-                                            Years</span>
-                                    </li>
-                                    <li> <span class="title">Nationality :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Bangladeshi</span>
-                                    </li>
-                                    <li> <span class="title">Freelance :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Available</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul class="about-list list-unstyled open-sans-font">
-                                    <li> <span class="title">Address :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Bogura,Bangladesh</span>
-                                    </li>
-                                    <li> <span class="title">phone :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">+8801758278604</span>
-                                    </li>
-                                    <li> <span class="title">Email :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">mehedi174629@gmail.com</span>
-                                    </li>
-                                    <li> <span class="title">Skype :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">steve.milner</span>
-                                    </li>
-                                    <li> <span class="title">langages :</span> <span
-                                            class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">Bangla,Hindi,English.</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            @foreach ($data as $info)
+                                <div class="col-6">
+
+                                    <ul class="about-list list-unstyled open-sans-font">
+
+                                        <li> <span class="title">first name :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['first_name'] }}</span>
+                                        </li>
+                                        <li> <span class="title">last name :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['last_name'] }}</span>
+                                        </li>
+                                        <li> <span class="title">Age :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['age'] }}
+                                                Years</span>
+                                        </li>
+                                        <li> <span class="title">Nationality :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['nationality'] }}</span>
+                                        </li>
+                                        <li> <span class="title">Freelance :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['freelance'] }}</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="about-list list-unstyled open-sans-font">
+                                        <li> <span class="title">Address :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['address'] }}</span>
+                                        </li>
+                                        <li> <span class="title">phone :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">+{{ $info['phone'] }}</span>
+                                        </li>
+                                        <li> <span class="title">Email :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['email'] }}</span>
+                                        </li>
+                                        <li> <span class="title">Skype :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['skype'] }}</span>
+                                        </li>
+                                        <li> <span class="title">langages :</span> <span
+                                                class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $info['language'] }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endforeach
+
+
                             <div class="col-12 mt-3">
                                 <a href="about.html" class="btn btn-download">Download CV</a>
                             </div>
@@ -107,86 +114,90 @@
                             My
                             Skills</h3>
                     </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p25">
-                            <span>25%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                    @foreach ($data2 as $info2)
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['html'] }}">
+                                <span>{{ $info2['html'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">html</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">html</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p89">
-                            <span>89%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['js'] }}">
+                                <span>{{ $info2['js'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">javascript</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">javascript</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p70">
-                            <span>70%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['css'] }}">
+                                <span>{{ $info2['css'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">css</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">css</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p66">
-                            <span>66%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['php'] }}">
+                                <span>{{ $info2['php'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">php</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">php</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p95">
-                            <span>95%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['wp'] }}">
+                                <span>{{ $info2['wp'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">wordpress</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">wordpress</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p50">
-                            <span>50%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['jquery1'] }}">
+                                <span>{{ $info2['jquery1'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">jquery</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">jquery</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p65">
-                            <span>65%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['laravel'] }}">
+                                <span>{{ $info2['laravel'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">laravel</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">angular</h6>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                        <div class="c100 p45">
-                            <span>45%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
+                        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+                            <div class="c100 p{{ $info2['bstrap'] }}">
+                                <span>{{ $info2['bstrap'] }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
                             </div>
+                            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">BootStrap</h6>
                         </div>
-                        <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">react</h6>
-                    </div>
+                    @endforeach
+
+
                 </div>
                 <!-- Skills Ends -->
                 <hr class="separator mt-1">
@@ -200,76 +211,37 @@
                     <div class="col-lg-6 m-15px-tb">
                         <div class="resume-box">
                             <ul>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-briefcase"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2018 - Present</span>
-                                    <h5 class="poppins-font text-uppercase">Web Developer <span
-                                            class="place open-sans-font">Envato</span></h5>
-                                    <p class="open-sans-font">Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
-                                        labore adipisicing elit, </p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-briefcase"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2013 - 2018</span>
-                                    <h5 class="poppins-font text-uppercase">UI/UX Designer <span
-                                            class="place open-sans-font">Themeforest</span></h5>
-                                    <p class="open-sans-font">Lorem incididunt dolor sit amet, consectetur eiusmod dunt
-                                        doldunt
-                                        dol elit, tempor incididunt</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-briefcase"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2005 - 2013</span>
-                                    <h5 class="poppins-font text-uppercase">Consultant <span
-                                            class="place open-sans-font">Videohive</span></h5>
-                                    <p class="open-sans-font">Lorem ipsum dolor sit amet, tempor incididunt ut
-                                        laboreconsectetur
-                                        elit, sed do eiusmod tempor duntt</p>
-                                </li>
+                                @foreach ($edu as $edu)
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fa fa-graduation-cap"></i>
+                                        </div>
+                                        <span class="time open-sans-font text-uppercase">{{ $edu['date'] }} -
+                                            Present</span>
+                                        <h5 class="poppins-font text-uppercase">{{ $edu['title'] }}<span
+                                                class="place open-sans-font">Envato</span></h5>
+                                        <p class="open-sans-font">{{ $edu['description'] }} </p>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 m-15px-tb">
                         <div class="resume-box">
                             <ul>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-graduation-cap"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2015</span>
-                                    <h5 class="poppins-font text-uppercase">Engineering Degree <span
-                                            class="place open-sans-font">Oxford University</span></h5>
-                                    <p class="open-sans-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                        do
-                                        tempor incididunt ut labore</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-graduation-cap"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2012</span>
-                                    <h5 class="poppins-font text-uppercase">Master Degree <span
-                                            class="place open-sans-font">Kiev University</span></h5>
-                                    <p class="open-sans-font">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                                        tempor incididunt ut adipisicing</p>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-graduation-cap"></i>
-                                    </div>
-                                    <span class="time open-sans-font text-uppercase">2009</span>
-                                    <h5 class="poppins-font text-uppercase">Bachelor Degree <span
-                                            class="place open-sans-font">Tunis High School</span></h5>
-                                    <p class="open-sans-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                        do
-                                        eiusmod tempor ut labore</p>
-                                </li>
+                                @foreach ($exp as $exp)
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fa fa-briefcase"></i>
+                                        </div>
+                                        <span class="time open-sans-font text-uppercase">{{ $exp['date'] }} -
+                                            Present</span>
+                                        <h5 class="poppins-font text-uppercase">{{ $exp['title'] }}<span
+                                                class="place open-sans-font">Envato</span></h5>
+                                        <p class="open-sans-font">{{ $exp['description'] }} </p>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>

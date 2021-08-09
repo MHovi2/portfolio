@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManagerStatic as Image;
+
 //Import all models...
 use App\home;
 use App\about_info;
@@ -38,15 +41,45 @@ class BackendController extends Controller
     //POST Method
     public function updateData(Request $req)
     {
-        $home = home::find($req->id);
-        $home->title = $req->title;
-        $home->name = $req->name;
-        $home->description = $req->description;
-        $home->image = $req->image;
 
-        $home->save();
 
-        return redirect('/home');
+
+
+
+        if ($req->hasFile('imageName')) {
+
+
+            $image = $req->file('imageName');
+            // $name = time();
+            $name = "background1";
+            $folder = 'uploads/';
+            // $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+            $filePath = $folder . $name . '.png';
+            $touch = Image::make($image);
+            // $touch->fit(320, 320);
+            $touch->save(public_path($filePath));
+
+            $home = home::find($req->id);
+            $home->title = $req->title;
+            $home->name = $req->name;
+            $home->image = $filePath;
+            $home->description = $req->description;
+            $home->save();
+        } else {
+
+            $home = home::find($req->id);
+            $home->title = $req->title;
+            $home->name = $req->name;
+            $home->image  = $home->image;
+            $home->description = $req->description;
+            $home->save();
+        }
+
+
+
+
+
+        return redirect()->back();
     }
 
     //Profile page Controllers..
@@ -61,17 +94,31 @@ class BackendController extends Controller
     //POST Method...
     public function addProject(Request $req)
     {
-        $project = new project();
 
-        $project->project_name = $req->projectName;
-        $project->clint_name = $req->clintName;
-        $project->languages = $req->languages;
-        $project->preview_link = $req->previewLink;
-        $project->image = $req->image;
 
-        $project->save();
+        if ($req->hasFile('imageName')) {
 
-        return redirect('admin/projects');
+            $project = new project();
+            $image = $req->file('imageName');
+            $name = time();
+            $folder = 'uploads/projects/';
+            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+            $touch = Image::make($image);
+            // $touch->fit(320, 320);
+            $touch->save(public_path($filePath));
+
+            $project->project_name = $req->projectName;
+            $project->clint_name = $req->clintName;
+            $project->languages = $req->languages;
+            $project->preview_link = $req->previewLink;
+            $project->image = $filePath;
+
+            $project->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     //show project
@@ -119,16 +166,28 @@ class BackendController extends Controller
     public function addBlog(Request $req)
     {
         $blog = new blog();
+        if ($req->hasFile('imageName')) {
 
-        $blog->title = $req->title;
-        $blog->post_by = $req->postBy;
-        $blog->description = $req->description;
-        $blog->post_date = $req->postDate;
-        $blog->image = $req->image;
 
-        $blog->save();
+            $image = $req->file('imageName');
+            $name = time();
+            $folder = 'uploads/blog/';
+            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+            $touch = Image::make($image);
+            // $touch->fit(320, 320);
+            $touch->save(public_path($filePath));
 
-        return redirect('admin/blog');
+            $blog->title = $req->title;
+            $blog->post_by = $req->postBy;
+            $blog->description = $req->description;
+            $blog->post_date = $req->postDate;
+            $blog->image = $filePath;
+
+            $blog->save();
+        }
+
+
+        return redirect()->back();
     }
     //Show Method...
     public function showData($id)
@@ -139,15 +198,39 @@ class BackendController extends Controller
     //Update Method..
     public function updateBlog(Request $req)
     {
-        $blog = blog::find($req->id);
+        $blog = new blog();
 
-        $blog->title = $req->title;
-        $blog->post_by = $req->postBy;
-        $blog->description = $req->description;
-        $blog->post_date = $req->postDate;
-        $blog->image = $req->image;
+        if ($req->hasFile('imageName')) {
 
-        $blog->save();
+
+            $image = $req->file('imageName');
+            $name = time();
+            $folder = 'uploads/blog/';
+            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+            $touch = Image::make($image);
+            // $touch->fit(320, 320);
+            $touch->save(public_path($filePath));
+
+
+            $blog = blog::find($req->id);
+            $blog->title = $req->title;
+            $blog->post_by = $req->postBy;
+            $blog->description = $req->description;
+            $blog->post_date = $req->postDate;
+            $blog->image = $filePath;
+
+            $blog->save();
+        } else {
+
+            $blog = blog::find($req->id);
+            $blog->title = $req->title;
+            $blog->post_by = $req->postBy;
+            $blog->description = $req->description;
+            $blog->post_date = $req->postDate;
+            $blog->image = $blog->image;
+
+            $blog->save();
+        }
 
         return redirect('admin/blog');
     }
@@ -276,7 +359,7 @@ class BackendController extends Controller
     public function expedu()
     {
         $data = expedu::all();
-        return view('backend.expedu', ['info' => $data]);
+        return view('backend.expedu', compact('data'));
     }
 
     //Post Method
@@ -285,10 +368,11 @@ class BackendController extends Controller
         $expecu = new expedu();
 
         $expecu->date = $req->date;
+        $expecu->title = $req->title;
         $expecu->expedu = $req->expedu;
         $expecu->description = $req->description;
-        // $expecu->exp = $req->exp;
-        // $expecu->edu = $req->edu;
+        $expecu->expedu = $req->state;
+
         $expecu->save();
 
         return redirect('admin/expedu');

@@ -21,7 +21,7 @@ class CreateSkillsTable extends Migration
             $table->integer('js');
             $table->integer('php');
             $table->integer('laravel');
-            $table->integer('jquery');
+            $table->integer('jquery1');
             $table->integer('wp');
             $table->integer('bstrap');
         });
