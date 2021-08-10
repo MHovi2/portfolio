@@ -20,8 +20,6 @@ class CreateExpedusTable extends Migration
             $table->string('title');
             $table->string('expedu');
             $table->text('description');
-            $table->string('exp');
-            $table->string('edu');
         });
     }
 

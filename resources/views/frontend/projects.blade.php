@@ -64,11 +64,6 @@
                                     <!-- Main Project Content Starts -->
                                     <div id="slider" class="carousel slide portfolio-slider" data-ride="carousel"
                                         data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#slider" data-slide-to="0" class="active"></li>
-                                            <li data-target="#slider" data-slide-to="1"></li>
-                                            <li data-target="#slider" data-slide-to="2"></li>
-                                        </ol>
                                         <!-- The slideshow -->
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">

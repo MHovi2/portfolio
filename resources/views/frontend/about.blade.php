@@ -65,7 +65,7 @@
 
 
                             <div class="col-12 mt-3">
-                                <a href="about.html" class="btn btn-download">Download CV</a>
+                                <a href="{{ route('about') }}" class="btn btn-download">Download CV</a>
                             </div>
                         </div>
                     </div>
@@ -216,10 +216,9 @@
                                         <div class="icon">
                                             <i class="fa fa-graduation-cap"></i>
                                         </div>
-                                        <span class="time open-sans-font text-uppercase">{{ $edu['date'] }} -
-                                            Present</span>
+                                        <span class="time open-sans-font text-uppercase">{{ $edu['date'] }} </span>
                                         <h5 class="poppins-font text-uppercase">{{ $edu['title'] }}<span
-                                                class="place open-sans-font">Envato</span></h5>
+                                                class="place open-sans-font">Passed</span></h5>
                                         <p class="open-sans-font">{{ $edu['description'] }} </p>
                                     </li>
                                 @endforeach
@@ -234,10 +233,9 @@
                                         <div class="icon">
                                             <i class="fa fa-briefcase"></i>
                                         </div>
-                                        <span class="time open-sans-font text-uppercase">{{ $exp['date'] }} -
-                                            Present</span>
+                                        <span class="time open-sans-font text-uppercase">{{ $exp['date'] }}</span>
                                         <h5 class="poppins-font text-uppercase">{{ $exp['title'] }}<span
-                                                class="place open-sans-font">Envato</span></h5>
+                                                class="place open-sans-font">Achive</span></h5>
                                         <p class="open-sans-font">{{ $exp['description'] }} </p>
                                     </li>
                                 @endforeach

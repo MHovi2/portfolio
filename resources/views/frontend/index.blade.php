@@ -18,7 +18,7 @@
                             <h1 class="text-uppercase poppins-font"><span>I'm</span> {{ $info['name'] }}</h1>
                             <p class="open-sans-font">{{ $info['description'] }}</p>
                         @endforeach
-                        <a href="about.html" class="btn btn-about">more about me</a>
+                        <a href="{{ route('about') }}" class="btn btn-about">more about me</a>
                     </div>
                 </div>
             </div>

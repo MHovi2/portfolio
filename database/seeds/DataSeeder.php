@@ -12,6 +12,8 @@ class DataSeeder extends Seeder
      */
     public function run()
     {
+
+
         //Home Page DB Seeder
         DB::table('homes')->insert([
             'title' => 'HI THERE !',
@@ -35,6 +37,7 @@ class DataSeeder extends Seeder
             'freelance' => 'Availabel',
         ]);
 
+
         //Skill Page DB Seeder
         DB::table('skills')->insert([
             'html' => '96',
@@ -57,10 +60,10 @@ class DataSeeder extends Seeder
 
         //Social Link Page DB Seeder
         DB::table('social_links')->insert([
-            'link1' => 'https://www.facebook.com/',
-            'link2' => 'https://www.facebook.com/',
-            'link3' => 'https://www.facebook.com/',
-            'link4' => 'https://www.facebook.com/',
+            'link1' => 'https://www.facebook.com/MH0vishek/',
+            'link2' => 'https://twitter.com/MehediH92640417',
+            'link3' => 'https://github.com/MHovi2',
+            'link4' => 'https://dribbble.com/MHovi',
         ]);
     }
 }
