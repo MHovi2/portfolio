@@ -117,9 +117,9 @@
                                                 <td>
                                                     <div class="badge badge-success">{{ $info['expedu'] }}</div>
                                                 </td>
-                                                <td><a href="{{ 'showProject/' . $info['id'] }}"
+                                                <td><a href="{{ 'showExp/' . $info['id'] }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="{{ 'deleteProject/' . $info['id'] }}"
+                                                    <a href="{{ 'deleteExp/' . $info['id'] }}"
                                                         class="btn btn-danger pl-2">Delete</a>
                                                 </td>
                                             </tr>

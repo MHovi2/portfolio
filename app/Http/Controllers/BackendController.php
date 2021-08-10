@@ -378,6 +378,38 @@ class BackendController extends Controller
         return redirect('admin/expedu');
     }
 
+    //Show expedu
+    public function showExpedu($id)
+    {
+        $data = expedu::find($id);
+        return view('backend.editExpedu', ['info' => $data]);
+    }
+
+    //Update Exp and Edu
+    public function updateExpedu(Request $req)
+    {
+        $expecu = expedu::find($req->id);
+
+        $expecu->date = $req->date;
+        $expecu->title = $req->title;
+        $expecu->expedu = $req->expedu;
+        $expecu->description = $req->description;
+        $expecu->expedu = $req->state;
+
+        $expecu->save();
+
+        return redirect('admin/expedu');
+    }
+
+    //Delete
+    public function deleteExpedu($id)
+    {
+        $expedu = expedu::find($id);
+        $expedu->delete();
+
+        return redirect('admin/expedu');
+    }
+
 
 
     //End...

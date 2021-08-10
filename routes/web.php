@@ -57,6 +57,9 @@ Route::prefix('admin')->group(function () {
     //About Exp & Edu Route ...........
     Route::get('expedu', [BackendController::class, 'expedu'])->name('expedu');
     Route::post('expedu', [BackendController::class, 'addexpedu']);
+    Route::get('showExp/{id}', [BackendController::class, 'showExpedu']);
+    Route::post('updateExp', [BackendController::class, 'updateExpedu'])->name('update.exp');
+    Route::get('deleteExp/{id}', [BackendController::class, 'deleteExpedu']);
 
     // Projects ROute .........
     Route::get('projects', [BackendController::class, 'projects'])->name('projects');
